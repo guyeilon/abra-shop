@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/abra-shop/static/css/main.b9e3c64b.css",
-    "main.js": "/abra-shop/static/js/main.745bdf15.js",
+    "main.js": "/abra-shop/static/js/main.1115736b.js",
     "index.html": "/abra-shop/index.html",
-    "main.745bdf15.js.map": "/abra-shop/static/js/main.745bdf15.js.map"
+    "main.1115736b.js.map": "/abra-shop/static/js/main.1115736b.js.map"
   },
   "entrypoints": [
     "static/css/main.b9e3c64b.css",
-    "static/js/main.745bdf15.js"
+    "static/js/main.1115736b.js"
   ]
 }
