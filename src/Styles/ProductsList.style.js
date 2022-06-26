@@ -2,13 +2,13 @@ import styled from 'styled-components';
 
 export const StyledPageWrapper = styled.section`
 	display: flex;
-	flex-direction: row;
+	flex-direction: row-reverse;
 	@media only screen and (max-width: ${({ theme }) => theme.breakPoints.mobile}) {
-		flex-direction: column-reverse;
+		flex-direction: column;
 		overflow-y: auto;
 		scroll-behavior: smooth;
-		height: 100vh;
 		overscroll-behavior-inline: contain;
+		height: 100vh;
 	}
 `;
 
@@ -46,6 +46,8 @@ export const StyledProductsList = styled.article`
 	flex-direction: row;
 	@media only screen and (max-width: ${({ theme }) => theme.breakPoints.mobile}) {
 		margin-top: 24px;
+		align-items: center;
+		justify-content: center;
 	}
 `;
 export const StyledCartWrapper = styled.aside`
@@ -55,10 +57,11 @@ export const StyledCartWrapper = styled.aside`
 	box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
 	padding: 40px 24px 5px;
 	margin-left: auto;
+
 	@media only screen and (max-width: ${({ theme }) => theme.breakPoints.mobile}) {
 		width: 100%;
 		padding: 24px 18px;
-		/* height: 50px; */
+		height: fit-content;
 	}
 `;
 

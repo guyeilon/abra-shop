@@ -40,7 +40,7 @@ export const StyledLink = styled(NavLink)`
 `;
 
 export const LinksWrapper = styled.div`
-	align-self: flex-start;
+	align-self: flex-end;
 	display: flex;
 	align-items: ${props => (props.mobile ? 'start' : 'center')};
 	justify-content: center;
@@ -49,6 +49,7 @@ export const LinksWrapper = styled.div`
 	gap: 26px;
 	@media only screen and (max-width: ${({ theme }) => theme.breakPoints.mobile}) {
 		display: ${props => (props.mobile ? 'flex' : 'none')};
+		align-self: flex-start;
 	}
 `;
 
@@ -57,6 +58,10 @@ export const LinkBorder = styled.div`
 	width: 75%;
 	padding-bottom: 15px;
 	padding-right: 4px;
+	margin-bottom: 5px;
+	@media only screen and (max-width: ${({ theme }) => theme.breakPoints.mobile}) {
+		margin-bottom: 0;
+	}
 `;
 
 export const Avatar = styled.img`

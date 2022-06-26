@@ -20,6 +20,7 @@ export const LogoutWrapper = styled.div`
 	font-weight: 500;
 	color: #808285;
 	display: flex;
+	align-items: center;
 `;
 
 export const StyledDrawer = styled.section`

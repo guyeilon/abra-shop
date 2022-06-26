@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, HashRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import Navbar from './components/Navbar';
 
@@ -10,7 +10,7 @@ function App() {
 	return (
 		<ThemeProvider theme={theme}>
 			<GlobalStyles />
-			<Router>
+			<HashRouter>
 				<Navbar />
 				<Routes>
 					<Route path='/home' element={<ProductsList />} />
@@ -19,7 +19,7 @@ function App() {
 					<Route path='/office' element={<ProductsList />} />
 					<Route path='/sports' element={<ProductsList />} />
 				</Routes>
-			</Router>
+			</HashRouter>
 		</ThemeProvider>
 	);
 }

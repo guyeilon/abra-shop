@@ -18,9 +18,9 @@ export const CartContentWrapper = styled.div`
 		justify-content: left;
 
 		margin-top: 17px;
-		height: 208px;
+		height: 230px;
 
-		min-width: 100vw;
+		/* min-width: 100vw; */
 
 		overflow-x: auto;
 		overscroll-behavior-inline: contain;

@@ -22,6 +22,10 @@ const ProductsList = () => {
 
 	return (
 		<StyledPageWrapper>
+			<StyledCartWrapper>
+				<CartHeader>My cart</CartHeader>
+				<Cart data={data} />
+			</StyledCartWrapper>
 			<StyledProductsListWrapper>
 				<PageHeader>{categoryToShow}</PageHeader>
 				<StyledProductsList>
@@ -30,10 +34,6 @@ const ProductsList = () => {
 					))}
 				</StyledProductsList>
 			</StyledProductsListWrapper>
-			<StyledCartWrapper>
-				<CartHeader>My cart</CartHeader>
-				<Cart data={data} />
-			</StyledCartWrapper>
 		</StyledPageWrapper>
 	);
 };
