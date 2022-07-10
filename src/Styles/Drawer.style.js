@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 export const CloseDrawer = styled.img`
 	position: absolute;
@@ -27,19 +27,21 @@ export const StyledDrawer = styled.section`
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	top: 0px;
-	width: 76.2%;
+	top: 0;
+	width: 50%;
 	height: 100%;
 	background-color: #fff;
 	padding: 20px 18px 40px 18px;
 	z-index: 5;
-	transition: 0.5s cubic-bezier(0.82, 0.085, 0.395, 0.895);
+
+	transform-origin: left center;
+	animation: showMenu 0.3s ease-in-out forwards;
 `;
 
 export const StyledDrawerWrapper = styled.section`
 	position: absolute;
-	top: 0px;
+	top: 64px;
 	width: 100%;
-	height: 100%;
+	height: calc(100% - 64px);
 	background-color: rgba(0, 0, 0, 0.4);
 `;

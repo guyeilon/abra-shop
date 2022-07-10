@@ -36,8 +36,26 @@ const GlobalStyles = createGlobalStyle`
 		color: ${({ theme }) => theme.button.hoverTextColor};
 	  }
 
+    &.disable{
+    border: solid 1px #808080;
+    background-color: #808080;
+    color: #fff;
+    cursor:default;
+
+    }
+
 
   }
+
+  @keyframes showMenu {
+    0% {
+        transform: scaleX(0);
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
+}
 
   
     

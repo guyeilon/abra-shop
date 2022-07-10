@@ -6,18 +6,18 @@ import GlobalStyles from './Styles/Global';
 import { theme } from './App/theme';
 import ProductsList from './pages/ProductsList';
 
+const pathLinks = ['Best-Seller', 'Clothing', 'Home', 'Office', 'Sports'];
+
 function App() {
 	return (
 		<ThemeProvider theme={theme}>
 			<GlobalStyles />
 			<HashRouter>
-				<Navbar />
+				<Navbar pathLinks={pathLinks} />
 				<Routes>
-					<Route path='/home' element={<ProductsList />} />
-					<Route path='/bestSellers' element={<ProductsList />} />
-					<Route path='/clothing' element={<ProductsList />} />
-					<Route path='/office' element={<ProductsList />} />
-					<Route path='/sports' element={<ProductsList />} />
+					{pathLinks.map((path, index) => {
+						return <Route key={index} path={path} element={<ProductsList />} />;
+					})}
 				</Routes>
 			</HashRouter>
 		</ThemeProvider>

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 export const CartContentWrapper = styled.div`
 	margin-top: 9px;
@@ -33,8 +33,19 @@ export const CartMsg = styled.div`
 	font-size: 16px;
 	color: #000;
 `;
+export const CartEmptyWrapper = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+`;
+
 export const CartMsgEmpty = styled(CartMsg)`
 	align-self: center;
+	text-align: center;
+	@media only screen and (max-width: ${({ theme }) => theme.breakPoints.mobile}) {
+		align-self: center;
+		text-align: center;
+	}
 `;
 export const CartMsgFull = styled(CartMsg)`
 	align-self: left;
@@ -48,6 +59,9 @@ export const CartEmptyImg = styled.img`
 	margin-top: 310px;
 	margin-bottom: 24px;
 	align-self: center;
+	@media only screen and (max-width: ${({ theme }) => theme.breakPoints.mobile}) {
+		margin-top: 18px;
+	}
 `;
 
 export const CartSubtotalWrapper = styled.div`

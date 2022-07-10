@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { NavLink } from 'react-router-dom';
 
 export const StyledNavbar = styled.nav`
@@ -11,16 +11,16 @@ export const StyledNavbar = styled.nav`
 `;
 
 export const Logo = styled.img`
-	margin-left: ${props => (props.mobile ? 0 : '64px')};
+	margin-left: 64px;
 	margin-right: 98px;
-	align-self: ${props => (props.mobile ? 'start' : 'center')};
+	align-self: center;
 	@media only screen and (max-width: ${({ theme }) => theme.breakPoints.mobile}) {
-		margin-left: ${props => (props.mobile ? 0 : '66px')};
-		margin-right: 0;
+		margin: 0 auto;
 	}
 `;
 
 export const StyledLink = styled(NavLink)`
+	width: fit-content;
 	display: flex;
 	flex-direction: ${props => (props.mobile ? 'row' : 'column')};
 	font-weight: 500;
@@ -45,7 +45,7 @@ export const LinksWrapper = styled.div`
 	align-items: ${props => (props.mobile ? 'start' : 'center')};
 	justify-content: center;
 	flex-direction: ${props => (props.mobile ? 'column' : 'row')};
-	margin-top: ${props => (props.mobile ? '51px' : '20px')};
+	margin-top: ${props => (props.mobile ? '20px' : '20px')};
 	gap: 26px;
 	@media only screen and (max-width: ${({ theme }) => theme.breakPoints.mobile}) {
 		display: ${props => (props.mobile ? 'flex' : 'none')};
@@ -61,6 +61,7 @@ export const LinkBorder = styled.div`
 	margin-bottom: 5px;
 	@media only screen and (max-width: ${({ theme }) => theme.breakPoints.mobile}) {
 		margin-bottom: 0;
+		width: 0;
 	}
 `;
 
@@ -70,13 +71,73 @@ export const Avatar = styled.img`
 	margin-right: 24px;
 	@media only screen and (max-width: ${({ theme }) => theme.breakPoints.mobile}) {
 		margin-right: 18px;
+		margin-left: 0;
 	}
 `;
-export const MobileMenu = styled.img`
+// export const MobileMenu = styled.img`
+// 	align-self: center;
+// 	margin-left: 18px;
+// 	display: none;
+// 	@media only screen and (max-width: ${({ theme }) => theme.breakPoints.mobile}) {
+// 		display: block;
+// 	}
+// `;
+export const MobileMenu = styled.button`
+	background-color: transparent;
+	border: none;
+	width: 48px;
+	height: 48px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	align-self: center;
 	margin-left: 18px;
 	display: none;
+	position: relative;
+	cursor: pointer;
+
+	&:hover {
+		background-color: transparent;
+	}
+
 	@media only screen and (max-width: ${({ theme }) => theme.breakPoints.mobile}) {
 		display: block;
+	}
+`;
+export const MenuIcon = styled.div`
+	background-color: #fff;
+	width: 40px;
+	height: 4px;
+	border-radius: 5px;
+	position: absolute;
+	transition: all 0.5s;
+	::after,
+	::before {
+		background-color: #fff;
+		width: 40px;
+		height: 4px;
+		border-radius: 5px;
+		position: absolute;
+		transition: all 0.5s;
+		content: '';
+	}
+
+	::after {
+		transform: translate(-20px, 12px);
+	}
+	::before {
+		transform: translate(-20px, -12px);
+	}
+
+	&.clicked {
+		background-color: transparent;
+		transform: rotate(360deg);
+
+		::after {
+			transform: translateX(-20px) rotate(45deg);
+		}
+		::before {
+			transform: translateX(-20px) rotate(-45deg);
+		}
 	}
 `;
